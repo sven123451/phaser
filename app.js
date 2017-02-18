@@ -87,5 +87,43 @@ function create() {
 
 }
 
+
 function update() {
+	game.physics.arcade.collide(player, platforms);
+	game.physics.arcade.collide(enemy1, platforms);
+	game.physics.arcade.collide(enemy2, platforms);
+	game.physics.arcade.collide(enemy3, platforms);
+
+	player.body.velocity.x = 0;
+
+	if(cursors.left.isDown) {
+		player.body.velocity.x = -150;
+		player.animations.play('left');
+	}
+
+}
+
+function collectStar(player, star) {
+	star.kill();
+	score += 1;
+	scoreText.setText(score);
+	star = stars.create(Math.floor(Math.random() * 750), 0, 'star');
+		star.body.gravity.y = 200;
+		star.body.bounce.y = 0.7 + Math.random() * 0.2;
+
+}
+function loseLife(player, enemy) {
+	enemy.kill();
+	life -= 1;
+	lifeText.setText(life);
+	enemy.reset(760, 20);
+
+}
+
+function checkLifeLeft(player, enemy) {
+	enemy.kill();
+	life -= 1;
+	lifeText.setText(life);
+	enemy.reset(10, 20);
+
 }
