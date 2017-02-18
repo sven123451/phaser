@@ -69,15 +69,15 @@ function create() {
 	var style = {font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV:"middle"};
 	scoreLabel = gmae.add.text(-60, 0, "Your Score is: ", style);
 	scoreText = game.add.text(70, 0, score, style);
-	scoreLabel.setShadow(3, 3, "rbga(0, 0, 0, 0.5") , 2);
-	scoreText.setShadow(3, 3, "rbga(0, 0, 0, 0.5") , 2);
+	scoreLabel.setShadow(3, 3, "rbga(0, 0, 0, 0.5)" , 2);
+	scoreText.setShadow(3, 3, "rbga(0, 0, 0, 0.5)" , 2);
 	scoreLabel.setTextBounds(0, 520, 800, 100);
 	scoreText.setTextBounds(0, 520, 800, 100);
 
 	lifeLabel = gmae.add.text(-300, 0, "Lives: ", style);
 	lifeText = game.add.text(-240, 0, life, style);
-	lfieLabel.setShadow(3, 3, "rbga(0, 0, 0, 0.5") , 2);
-	lifeText.setShadow(3, 3, "rbga(0, 0, 0, 0.5") , 2);
+	lfieLabel.setShadow(3, 3, "rbga(0, 0, 0, 0.5)" , 2);
+	lifeText.setShadow(3, 3, "rbga(0, 0, 0, 0.5)" , 2);
 	lfieLabel.setTextBounds(0, 0, 800, 100);
 	lifeText.setTextBounds(0, 0, 800, 100);
 	
