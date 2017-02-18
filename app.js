@@ -29,7 +29,7 @@ function create() {
 	player = game.add.sprite(32, game.world.height - 220, 'dude');
 	player.animations.add('left', [0,1,2,3], 10, true);
 	player.animations.add('right', [5,6,7,8], 10, true);
-	game.physics,arcade.enable(player);
+	game.physics.arcade.enable(player);
 	player.body.bounce.y = 0.2;
 	player.body.gravity.y = 300;
 	player.body.collideWorldBounds = true;
@@ -85,7 +85,7 @@ function create() {
 }
 
 
-}
+
 
 
 function update() {
@@ -100,6 +100,52 @@ function update() {
 		player.body.velocity.x = -150;
 		player.animations.play('left');
 	}
+	else if(cursors.right.isDown) {
+		player.body.velocity.x = -150;
+		player.animations.play('left');
+	}
+	else{
+		player.animation.stop();
+		player.frame = 4;
+	}
+	if(cursors.up.isDown && player.body.touching.down) {
+		player.body.velocity.y = -300;
+	}
+
+	if(enemy1.x > 759) {
+		enemy1.animations.play('left');
+		enemy1.body.velocity.x = -120;
+
+	}
+	else if (enemy1.x < 405) {
+		enemy1.animations.play('right');
+		enemy1.body.velocity.x = 120;
+	}
+	if(enemy2.x > 200) {
+		enemy2.animations.play('left');
+		enemy2.body.velocity.x = -80;
+
+	}
+	else if (enemy2.x < 21) {
+		enemy2.animations.play('right');
+		enemy2.body.velocity.x = 80;
+	}
+	if(enemy3.x > 759) {
+		enemy3.animations.play('left');
+		enemy3.body.velocity.x = -150;
+
+	}
+	else if (enemy3.x < 201) {
+		enemy3.animations.play('right');
+		enemy3.body.velocity.x = 150;
+	}
+	game. physics.arcade.collide(stars, platforms);
+	game.physics.arcade.overlap(player, stars, collectStar, null, this);
+	game.physics.arcade.collide(stars, platforms);
+
+	game.physics.arcade.overlap(player, enemy1, loselife, null, this);
+	game.physics.arcade.overlap(player, enemy2, checklifeLeft, null, this);
+	game.physics.arcade.overlap(player, enemy3, loselife, null, this);
 
 }
 
