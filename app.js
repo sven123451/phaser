@@ -76,8 +76,8 @@ function create() {
 
   enemy4 = game.add.sprite(300, 20, 'evil')
     // Enemy animations using spritesheet and applies game physics
-    enemy4.animations.add('left', [0, 1], 10, true);
-    enemy4.animations.add('right', [2, 3], 10, true);
+    enemy4.animations.add('left', [0], 10, true);
+    enemy4.animations.add('right', [0], 10, true);
     game.physics.arcade.enable(enemy3);
     // Enemy physics properties.
     enemy4.body.bounce.y = 0.2;
@@ -215,4 +215,10 @@ function loseLifeLeft (player, enemy) {
   life = life - 1;
   lifetext.setText(life);
   enemy.reset(10, 20);
+  if(life == 0) {
+    player.kill();
+    enemy1.kill();
+    enemy2.kill();
+    enemy3.kill();
+  }
 }
