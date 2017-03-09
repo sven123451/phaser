@@ -198,26 +198,26 @@ function collectStar (player, star) {
   star.body.gravity.y = 200;
   star.body.bounce.y = 0.7 + Math.random() * 0.2;
 }
+}
 
+//Defining loseLife
+function loseLife (player, enemy) {
+  console.log('loselife working again');
+  enemy.kill();
+  life = life - 1;
+  lifetext.setText(life);
+  enemy.reset(760, 20);
+}
 
-// Defining loseLife
-// function loseLife (player, enemy) {
-//   console.log('loselife working again');
-//   enemy.kill();
-//   life = life - 1;
-//   lifetext.setText(life);
-//   enemy.reset(760, 20);
-//}
-
-// function loseLifeLeft (player, enemy) {
-//   console.log('loselife working again');
-//   enemy.kill();
-//   life = life - 1;
-//   lifetext.setText(life);
-//   enemy.reset(10, 20);
-//   if(life == 0) {
-//     game.world.removeAll();
-//     button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
+function loseLifeLeft (player, enemy) {
+  console.log('loselife working again');
+  enemy.kill();
+  life = life - 1;
+  lifetext.setText(life);
+  enemy.reset(10, 20);
+  if(life == 0) {
+    game.world.removeAll();
+    button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
    
   }
 }
