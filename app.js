@@ -10,7 +10,7 @@ function preload() {
   game.load.image('star', 'assets/coolstar.png');
   game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
   game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
-    game.load.spritesheet('evil', 'assets/invader.png', 64, 64);
+  game.load.spritesheet('evil', 'assets/invader.png', 64, 64);
 }
 
 function create() {
@@ -74,15 +74,15 @@ function create() {
     enemy3.body.gravity.y = 500;
     enemy3.body.collideWorldBounds = true;
 
-  enemy4 = game.add.sprite(300, 20, 'evil')
-    // Enemy animations using spritesheet and applies game physics
-    enemy4.animations.add('left', [0], 10, true);
-    enemy4.animations.add('right', [0], 10, true);
-    game.physics.arcade.enable(enemy3);
-    // Enemy physics properties.
-    enemy4.body.bounce.y = 0.2;
-    enemy4.body.gravity.y = 500;
-    enemy4.body.collideWorldBounds = true;
+  // enemy4 = game.add.sprite(300, 20, 'evil')
+  //   // Enemy animations using spritesheet and applies game physics
+  //   enemy4.animations.add('left', [0], 10, true);
+  //   enemy4.animations.add('right', [0], 10, true);
+  //   game.physics.arcade.enable(enemy3);
+  //   // Enemy physics properties.
+  //   enemy4.body.bounce.y = 0.2;
+  //   enemy4.body.gravity.y = 500;
+  //   enemy4.body.collideWorldBounds = true;
 
   // Creating keyboard entry
   cursors = game.input.keyboard.createCursorKeys();
