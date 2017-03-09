@@ -1,4 +1,4 @@
-console.log('hey hey it works');
+console.log('hey, thats pretty good');
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 var score = 0;
@@ -10,7 +10,7 @@ function preload() {
   game.load.image('star', 'assets/coolstar.png');
   game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
   game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
-    game.load.spritesheet('evil', 'assets/invader.png', 32, 32);
+    game.load.spritesheet('evil', 'assets/invader.png', 64, 64);
 }
 
 function create() {
@@ -131,15 +131,15 @@ function update() {
   player.body.velocity.x = 0;
 
   // Left key pressed
-  if (cursors.left.isDown){
+  //if (cursors.left.isDown){
         // Move to the left
         player.body.velocity.x = -150;
         // Play animation
         player.animations.play('left');
-    } else if (cursors.right.isDown) {
+   // } else if (cursors.right.isDown) {
       	player.body.velocity.x = 150;
       	player.animations.play('right');
-  	} else {
+  	//} else {
       //  Stand still
       player.animations.stop();
       player.frame = 4;
@@ -216,9 +216,8 @@ function loseLifeLeft (player, enemy) {
   lifetext.setText(life);
   enemy.reset(10, 20);
   if(life == 0) {
-    player.kill();
-    enemy1.kill();
-    enemy2.kill();
-    enemy3.kill();
+    game.world.removeAll();
+    button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
+   
   }
 }
