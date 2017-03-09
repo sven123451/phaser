@@ -75,8 +75,8 @@ function create() {
     enemy3.body.collideWorldBounds = true;
 
   enemy4 = game.add.sprite(300, 20, 'evil')
+    game.physics.arcade.enable(enemy4);
     
-    enemy4.body.bounce.y = 0.2;
     
     enemy4.body.collideWorldBounds = true;
 
