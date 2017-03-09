@@ -198,7 +198,7 @@ function collectStar (player, star) {
   star.body.gravity.y = 200;
   star.body.bounce.y = 0.7 + Math.random() * 0.2;
 }
-}
+
 
 //Defining loseLife
 function loseLife (player, enemy) {
@@ -220,4 +220,5 @@ function loseLifeLeft (player, enemy) {
     button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
    
   }
+}
 }
