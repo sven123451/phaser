@@ -130,16 +130,16 @@ function update() {
   // Reset the player’s velocity (movement) if no events
   player.body.velocity.x = 0;
 
-  // Left key pressed
-  //if (cursors.left.isDown){
+  //Left key pressed
+  if (cursors.left.isDown){
         // Move to the left
         player.body.velocity.x = -150;
         // Play animation
         player.animations.play('left');
-   // } else if (cursors.right.isDown) {
+    } else if (cursors.right.isDown) {
       	player.body.velocity.x = 150;
       	player.animations.play('right');
-  	//} else {
+  	} else {
       //  Stand still
       player.animations.stop();
       player.frame = 4;
@@ -201,23 +201,23 @@ function collectStar (player, star) {
 
 
 // Defining loseLife
-function loseLife (player, enemy) {
-  console.log('loselife working again');
-  enemy.kill();
-  life = life - 1;
-  lifetext.setText(life);
-  enemy.reset(760, 20);
+// function loseLife (player, enemy) {
+//   console.log('loselife working again');
+//   enemy.kill();
+//   life = life - 1;
+//   lifetext.setText(life);
+//   enemy.reset(760, 20);
 }
 
-function loseLifeLeft (player, enemy) {
-  console.log('loselife working again');
-  enemy.kill();
-  life = life - 1;
-  lifetext.setText(life);
-  enemy.reset(10, 20);
-  if(life == 0) {
-    game.world.removeAll();
-    button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
+// function loseLifeLeft (player, enemy) {
+//   console.log('loselife working again');
+//   enemy.kill();
+//   life = life - 1;
+//   lifetext.setText(life);
+//   enemy.reset(10, 20);
+//   if(life == 0) {
+//     game.world.removeAll();
+//     button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
    
   }
 }
