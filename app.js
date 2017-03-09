@@ -182,7 +182,7 @@ function update() {
   game.physics.arcade.overlap(player, enemy1, loseLife, null, this)
   game.physics.arcade.overlap(player, enemy2, loseLifeLeft, null, this)
   game.physics.arcade.overlap(player, enemy3, loseLife, null, this)
-
+}
 
 // Defining collectStar function
 function collectStar (player, star) {
@@ -220,5 +220,5 @@ function loseLifeLeft (player, enemy) {
     button = game.add.button(300, 400, 'button' , actionOnClick, this, 2, 1, 0);
    
   }
-}
+
 }
