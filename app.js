@@ -75,14 +75,12 @@ function create() {
     enemy3.body.collideWorldBounds = true;
 
   enemy4 = game.add.sprite(300, 20, 'evil')
-    // Enemy animations using spritesheet and applies game physics
-  
-    // Enemy physics properties.
+    
     enemy4.body.bounce.y = 0.2;
-    enemy4.body.gravity.y = 500;
+    
     enemy4.body.collideWorldBounds = true;
 
-  Creating keyboard entry
+  //Creating keyboard entry
   cursors = game.input.keyboard.createCursorKeys();
 
   // Creating stars
