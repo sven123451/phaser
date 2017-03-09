@@ -207,7 +207,7 @@ function collectStar (player, star) {
 //   life = life - 1;
 //   lifetext.setText(life);
 //   enemy.reset(760, 20);
-}
+//}
 
 // function loseLifeLeft (player, enemy) {
 //   console.log('loselife working again');
